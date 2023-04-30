@@ -6,7 +6,7 @@
 
     <table class="table table-fit">
       <thead class="thead-dark">
-        <tr>
+        <tr class='cafe-header'>
           <th scope="col">#</th>
           <th scope="col">Nombre</th>
           <th scope="col">Tipo</th>
@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of cafes">
+        <tr class='cafe-row' *ngFor="let item of cafes">
           <th scope="row">{{item.id}}</th>
           <td>{{item.nombre}}</td>
           <td>{{item.tipo}}</td>
@@ -28,7 +28,7 @@
     <p class="totales">Total café blend: {{totalCantCafeBlend}}</p>
 
     <div class="footer">
-      <p>Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico</p>
+      <p class='footer-text'>Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico</p>
     </div>
 
 </div>
