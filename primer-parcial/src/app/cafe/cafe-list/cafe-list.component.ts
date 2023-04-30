@@ -11,6 +11,8 @@ export class CafeListComponent implements OnInit {
   cafes: Array<Cafe> = [];
   isLoading: boolean = true;
   noConnection: boolean=false;
+  totalCantCafeOrigen: number=0;
+  totalCantCafeBlend: number=0;
   constructor(private cafeService: CafeService) { }
 
   ngOnInit() {
@@ -21,7 +23,16 @@ export class CafeListComponent implements OnInit {
     this.cafeService.getCafes().subscribe((cafes) => {
         this.isLoading = false;
         this.cafes = cafes;
-        console.log(this.cafes);
+        const cafeOrigen= this.cafes.filter((obj) =>{
+          return obj.tipo === 'Café de Origen'
+        });
+        this.totalCantCafeOrigen=cafeOrigen.length;
+
+        const cafeBlend= this.cafes.filter((obj) =>{
+          return obj.tipo === 'Blend'
+        });
+        this.totalCantCafeBlend=cafeBlend.length;
+
       },
       (error) =>{
         this.noConnection=true;

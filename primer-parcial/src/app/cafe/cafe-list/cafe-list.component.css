@@ -48,3 +48,7 @@ table.table-fit tbody td, table.table-fit tfoot td {
 
 }
 
+.totales{
+  font-family: Inter;
+  font-size: 12px;
+}
